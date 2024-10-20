@@ -1,0 +1,89 @@
+.day {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 1.5rem;
+}
+
+.headerDay {
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.8rem;
+  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 1.4rem;
+}
+
+.headerDay_orange {
+  background-color: orange;
+}
+
+.headerDay_yellow {
+  background-color: #fabc18;
+}
+
+.headerDay_green {
+  background-color: #62b231;
+}
+
+.headerDay_lightblue {
+  background-color: #1e99ef;
+}
+
+.headerDay_blue {
+  background-color: #5185cc;
+}
+
+.headerDay_purple {
+  background-color: purple;
+}
+
+.contentDay {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.lessonInner {
+  border-right: 1px solid black;
+  color: wheat;
+  background-color: brown;
+  font-weight: bold;
+  display: flex;
+  padding: 0.4rem 0.3em;
+}
+
+.lesson {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.lesson + .lesson {
+  border-top: none;
+}
+
+.numberLesson {
+  padding-right: 0.25rem;
+  display: inline-block;
+}
+
+.timeLesson {
+  width: max-content;
+}
+
+.lessonName {
+  width: 100%;
+  max-height: 1.8rem;
+  text-align: center;
+  padding-left: 0.5rem;
+  font-size: 1.4rem;
+  color: brown;
+  font-weight: 600;
+  overflow: hidden;
+}

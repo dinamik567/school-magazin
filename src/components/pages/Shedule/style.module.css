@@ -1,0 +1,48 @@
+.shedule {
+  min-height: 100vh;
+  background-color: wheat;
+}
+
+.title {
+  padding: 1rem;
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  line-height: 1;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container {
+  padding: 1rem 1.5rem;
+  max-width: 120rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.studetWrapper {
+  display: flex;
+  justify-content: flex-end;
+  color: #40967c;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.studentSchool {
+  padding: 0.3em;
+}
+
+.studentClass {
+  margin-right: 4%;
+  padding: 0.3em;
+}
+
+.table {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 25rem));
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

@@ -1,7 +1,12 @@
 import "./App.css";
+import { ShedulePage } from "./components/pages/Shedule";
 
 function App() {
-  return <body></body>;
+  return (
+    <>
+      <ShedulePage />
+    </>
+  );
 }
 
 export default App;
