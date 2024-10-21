@@ -1,10 +1,9 @@
 import "./App.css";
-import { ShedulePage } from "./components/pages/Shedule";
-
+import { HomePage } from "./components/pages/Home";
 function App() {
   return (
     <>
-      <ShedulePage />
+      <HomePage />
     </>
   );
 }
