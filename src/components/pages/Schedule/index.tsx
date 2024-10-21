@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-import { DaylySchedule } from "../../DailylSchedule";
+import { DaylySchedule } from "../../Dailyl-schedule";
 import { SchoolDay } from "../../../types/type";
 import { NAME_OF_DAY } from "../../../defaultSettings";
 
