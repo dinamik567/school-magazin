@@ -1,0 +1,117 @@
+.home {
+  min-height: 100vh;
+  background-color: wheat;
+}
+
+.header {
+  background-color: brown;
+  min-height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  align-items: center;
+  color: wheat;
+  margin-bottom: 4em;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  padding-left: 3rem;
+  cursor: pointer;
+}
+
+.logo::after {
+  content: "";
+  top: 50%;
+  left: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/diary.png");
+  width: 3rem;
+  height: 3rem;
+}
+
+.login {
+  font-size: 1.4rem;
+  margin-right: 1.5rem;
+  padding: 0.5em 1.5em;
+  font-weight: 500;
+  border: 2px solid wheat;
+  border-radius: 1.6rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.login:hover {
+  color: brown;
+  background-color: wheat;
+  opacity: 0.9;
+}
+
+.login:active {
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+.container {
+  width: 108rem;
+  margin: 0 auto;
+}
+
+.navList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 20rem));
+  grid-template-rows: repeat(auto-fill, minmax(10rem, 15rem));
+  gap: 2rem;
+}
+
+.listItem {
+  border-radius: 1.6rem;
+  background-color: #a52a2ae0;
+  display: flex;
+  padding: 1.2em;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+  box-shadow: 16px 16px 17px 0px rgba(34, 60, 80, 0.49);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.listItem:hover {
+  transform: translateY(3px);
+}
+
+.listItem::before {
+  content: "";
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+}
+
+.listItem_calender::before {
+  background-image: url("/calendar.svg");
+  transform: translate(-50%, -35%);
+  width: 40%;
+  height: 50%;
+}
+
+.listItem_results::before {
+  background-image: url("/results_icon.svg");
+  transform: translate(-50%, -35%);
+  width: 40%;
+  height: 50%;
+}
+
+.navItem {
+  color: #f5deb3;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
