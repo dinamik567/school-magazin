@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { ShedulePage } from "../components/pages/Schedule";
+import { SchoolMagazinePage } from "../components/pages/School-magazine";
 
 export const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ export const router = createBrowserRouter([
     element: <ShedulePage />,
   },
   {
-    path: "schedule",
-    element: <ShedulePage />,
+    path: "school_magazine",
+    element: <SchoolMagazinePage />,
   },
 ]);
