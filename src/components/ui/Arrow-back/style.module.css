@@ -1,0 +1,19 @@
+.button_back {
+  background-color: #f5deb3;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 100%;
+  color: #a52a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.button_back::after {
+  content: "Назад";
+  position: absolute;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  right: -3.5em;
+  color: wheat;
+}

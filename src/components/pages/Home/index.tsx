@@ -25,7 +25,10 @@ export function HomePage({ openModal }: HomePageProps) {
           >
             <span className={style.navItem}>Расписание</span>
           </Link>
-          <Link className={`${style.listItem} ${style.listItem_results}`} to="">
+          <Link
+            className={`${style.listItem} ${style.listItem_results}`}
+            to="school_magazine"
+          >
             <span className={style.navItem}>Журнал</span>
           </Link>
         </nav>
