@@ -1,12 +1,21 @@
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
 
-export function HomePage() {
+interface HomePageProps {
+  openModal: () => void;
+}
+
+export function HomePage({ openModal }: HomePageProps) {
+  function hadleClickEnterButton() {
+    openModal();
+  }
   return (
     <div className={style.home}>
       <div className={style.header}>
         <div className={style.logo}>Электронный дневник</div>
-        <div className={style.login}>Войти</div>
+        <div className={style.login} onClick={hadleClickEnterButton}>
+          Войти
+        </div>
       </div>
       <div className={style.container}>
         <nav className={style.navList}>
