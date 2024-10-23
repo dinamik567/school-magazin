@@ -1,7 +1,10 @@
+import style from "./style.module.css";
+import { HeaderSection } from "../../ui/Heder-section";
+
 export function SchoolMagazinePage() {
   return (
-    <div>
-      <header>heder</header>
-    </div>
+    <section className={style.magazine_section}>
+      <HeaderSection>Журнал</HeaderSection>
+    </section>
   );
 }

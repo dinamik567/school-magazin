@@ -1,0 +1,23 @@
+.header {
+  background-color: brown;
+  color: wheat;
+
+  padding: 1em 1.5em;
+}
+
+.container {
+  min-height: 7rem;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  color: #f5deb3;
+}
