@@ -1,0 +1,11 @@
+.user_block {
+  margin-left: auto;
+  max-width: 32rem;
+
+  font-family: "Sans Narrow";
+  padding: 1em 1.5em;
+  text-align: right;
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  font-weight: bold;
+  color: brown;
+}
