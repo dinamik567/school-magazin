@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Sans Narrow";
+  src: local("Sans Narrow Bold"), local("SansNarrow-Regular"),
+    url("./assets/fonts/Sans-Narrow/PTSansNarrow-Regular.ttf") format(".ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Sans Narrow";
+  src: local("Sans Narrow Bold"), local("SansNarrow-Bold"),
+    url("./assets/fonts/Sans-Narrow/PTSansNarrow-Bold.ttf") format(".ttf");
+  font-weight: bold;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

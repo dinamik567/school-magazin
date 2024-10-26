@@ -16,3 +16,9 @@ export enum CLASS_MODIFIERS {
   BLUE = "headerDay_blue",
   PURPLE = "headerDay_purple",
 }
+
+export const ROLES = {
+  teacher: "Учитель",
+  student: "Ученик",
+  parent: "Родитель",
+};
