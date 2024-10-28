@@ -17,6 +17,16 @@ export enum CLASS_MODIFIERS {
   PURPLE = "headerDay_purple",
 }
 
+export enum shortNameOfWeekDay {
+  "вс",
+  "пн",
+  "вт",
+  "ср",
+  "чт",
+  "пт",
+  "сб",
+}
+
 export const ROLES = {
   teacher: "Учитель",
   student: "Ученик",
