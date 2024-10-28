@@ -1,9 +1,9 @@
 import style from "./style.module.css";
-import { SchoolDay } from "../../types/type";
+import { SchoolDayI } from "../../types/type";
 import { colorForThisDayOfTheWeek } from "./utils";
 
 export interface DaylyScheduleProps {
-  SchoolDay: SchoolDay;
+  SchoolDay: SchoolDayI;
 }
 
 export function DaylySchedule({ SchoolDay }: DaylyScheduleProps) {

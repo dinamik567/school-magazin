@@ -4,5 +4,8 @@
   min-height: 100vh;
 }
 
-/* .table {
-} */
+.container {
+  margin: 0 auto;
+  max-width: 118rem;
+  padding: 1em;
+}

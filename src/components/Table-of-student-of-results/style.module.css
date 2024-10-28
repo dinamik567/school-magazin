@@ -1,0 +1,79 @@
+.table {
+  color: brown;
+  font-weight: 600;
+  width: 100%;
+}
+
+.table__row {
+  display: flex;
+}
+
+.table__inner {
+  display: flex;
+  width: 100%;
+  border: 1px solid brown;
+}
+
+.table__inner_border {
+  border-top: none;
+}
+
+.table__firstCol {
+  width: 100%;
+  min-height: 2rem;
+  max-width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid brown;
+  border-right: none;
+}
+
+.table__firstCol + .table__firstCol {
+  border-bottom: 1px solid brown;
+}
+
+.table__firstCol_border {
+  border-top: none;
+}
+
+.table__borderBottom {
+  border-bottom: none;
+}
+
+.row__nameDay {
+  display: flex;
+  justify-content: center;
+  height: max-content;
+  align-items: center;
+}
+
+.ceil__numberDay {
+  min-width: 2rem;
+  min-height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ceil__numberDay_border {
+  border-top: 1px solid brown;
+}
+
+.subject__inner {
+  display: flex;
+  justify-content: start;
+  height: 20rem;
+}
+
+.subjectName {
+  border: 1px solid brown;
+}
+
+.table__ceil {
+  width: 100%;
+}
+
+.table__ceil + .table__ceil {
+  border-left: 1px solid brown;
+}
