@@ -22,7 +22,6 @@ export function RowOfTable({
       <div className={`${style.table__inner} ${style.table__inner_border}`}>
         {schoolDays.map((day) => {
           const grade = schoolResult.find((item) => item.date == day.date);
-          console.log(grade);
           return (
             <div key={day.date} className={style.table__ceil}>
               <div className={style.ceil__numberDay}>{grade?.result}</div>

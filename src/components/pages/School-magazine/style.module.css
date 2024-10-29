@@ -9,3 +9,10 @@
   max-width: 118rem;
   padding: 1em;
 }
+
+.control__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
