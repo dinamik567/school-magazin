@@ -1,22 +1,27 @@
 import style from "./style.module.css";
-import { SchoolSubjectI } from "../../types/type";
+import { SchoolSubjectI, SchoolResultI } from "../../types/type";
 import { HeaderOfRow } from "./HeaderOfRow";
 import { RowOfTable } from "./RowOfTable";
 import { SchoolSchedule } from "../../mock";
 
 interface TableOfStudentOfResultsProps {
   schoolSubject: SchoolSubjectI[];
+  activePage: number;
+  countPage: number;
 }
-
-// console.log("длинна экрана", window.innerWidth);
 
 export function TableOfStudentOfResults({
   schoolSubject,
+  activePage,
+  countPage,
 }: TableOfStudentOfResultsProps) {
-  console.log(schoolSubject);
   return (
     <div className={style.table}>
-      <HeaderOfRow schoolDays={SchoolSchedule} />
+      <HeaderOfRow
+        schoolDays={SchoolSchedule}
+        activePage={activePage}
+        countPage={countPage}
+      />
       {schoolSubject.map((schoolDay) => {
         return (
           <RowOfTable
