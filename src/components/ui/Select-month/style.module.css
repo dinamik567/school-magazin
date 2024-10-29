@@ -1,0 +1,7 @@
+.selectMonth {
+  border: 1px solid brown;
+  border-radius: 4px;
+  padding: 0.5em 0.75em;
+  color: brown;
+  font-weight: 600;
+}
