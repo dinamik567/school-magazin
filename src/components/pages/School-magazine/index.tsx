@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { HeaderSection } from "../../ui/Heder-section";
 import { NameUserBlock } from "../../Name-user-block";
 import { TableOfStudentOfResults } from "../../Table-of-student-of-results";
@@ -7,6 +7,10 @@ import { UserI } from "../../../types/type";
 import { subjects } from "../../../mock";
 import { SelectMonth } from "../../ui/Select-month";
 import { Pagination } from "../../ui/Pagination";
+import { useSelector } from "react-redux";
+import { selectCountPage } from "../../../store/school-magazine/school-magazine-selectors";
+import { useAppDispatch } from "../../../store/hooks";
+import { chanageCountPage } from "../../../store/school-magazine/school-magazine-slice";
 
 const user: UserI = {
   name: "Владислав",
@@ -16,18 +20,18 @@ const user: UserI = {
 };
 
 export function SchoolMagazinePage() {
-  const [activePage, setActivePage] = useState(1);
-  const [countPage, setCountPage] = useState(1);
+  const countPage = useSelector(selectCountPage);
+  const dispatch = useAppDispatch();
 
-  function handleResize() {
-    if (window.innerWidth < 501) {
-      setCountPage(3);
+  const handleResize = useCallback(() => {
+    if (window.innerWidth < 500) {
+      dispatch(chanageCountPage(3));
     } else if (window.innerWidth < 901) {
-      setCountPage(2);
+      dispatch(chanageCountPage(2));
     } else {
-      setCountPage(0);
+      dispatch(chanageCountPage(0));
     }
-  }
+  }, [dispatch]);
 
   useEffect(() => {
     handleResize();
@@ -36,9 +40,7 @@ export function SchoolMagazinePage() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
-
-  useEffect(() => {}, []);
+  }, [handleResize]);
 
   return (
     <section className={style.magazine_section}>
@@ -48,19 +50,10 @@ export function SchoolMagazinePage() {
         <div className={style.control__inner}>
           <SelectMonth />
           {countPage !== 0 && (
-            <Pagination
-              maxWidth={150}
-              countPage={countPage}
-              activePage={activePage}
-              setActivePage={setActivePage}
-            />
+            <Pagination maxWidth={150} countPage={countPage} />
           )}
         </div>
-        <TableOfStudentOfResults
-          schoolSubject={subjects}
-          activePage={activePage}
-          countPage={countPage}
-        />
+        <TableOfStudentOfResults schoolSubject={subjects} />
       </div>
     </section>
   );
