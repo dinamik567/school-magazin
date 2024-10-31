@@ -1,44 +1,24 @@
 import style from "./style.module.css";
-import { getShortNameOfWeekDay, getNumberOfDay } from "./utils";
+import {
+  getShortNameOfWeekDay,
+  getNumberOfDay,
+  getSubArrayActivePage,
+} from "./utils";
+import { useSelector } from "react-redux";
+import {
+  selectActivePage,
+  selectCountPage,
+} from "../../store/school-magazine/school-magazine-selectors";
 import { SchoolDayI } from "../../types/type";
 
 interface HeaderOfRowProps {
   schoolDays: SchoolDayI[];
-  activePage: number;
-  countPage: number;
 }
 
-export function HeaderOfRow({
-  schoolDays,
-  activePage,
-  countPage,
-}: HeaderOfRowProps) {
-  function getSubArrayActivePage(
-    schoolDays: SchoolDayI[],
-    activePage: number,
-    countPage: number
-  ) {
-    if (countPage === 0) {
-      return schoolDays;
-    }
+export function HeaderOfRow({ schoolDays }: HeaderOfRowProps) {
+  const activePage = useSelector(selectActivePage);
+  const countPage = useSelector(selectCountPage);
 
-    const amountElem = Math.floor(schoolDays.length / countPage);
-    const prevArr = [...schoolDays];
-    const newArr = [];
-
-    for (let i = 0; i < countPage; i++) {
-      if (prevArr.length === 0) {
-        break;
-      }
-      if (prevArr.length < amountElem) {
-        newArr.push(prevArr.splice(0));
-      } else {
-        newArr.push(prevArr.splice(0, amountElem));
-      }
-    }
-
-    return newArr[activePage - 1];
-  }
   return (
     <div className={style.table__row}>
       <div className={`${style.table__firstCol}`}>Предметы</div>

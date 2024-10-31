@@ -1,22 +1,22 @@
+import { useSelector, useDispatch } from "react-redux";
 import style from "./style.module.css";
+import { RootState } from "../../../store/store";
+import { chanageActivePage } from "../../../store/school-magazine/school-magazine-slice";
 
 interface PaginationProps {
   maxWidth: number;
   countPage: number;
-  activePage: number;
-  setActivePage: (arg0: number) => void;
 }
 
-export function Pagination({
-  maxWidth,
-  countPage,
-  activePage,
-  setActivePage,
-}: PaginationProps) {
+export function Pagination({ maxWidth, countPage }: PaginationProps) {
+  const activePage = useSelector(
+    (state: RootState) => state.shoolMagazineState.activePage
+  );
   const numbersPage = Array.from({ length: countPage }, (_, i) => i + 1);
+  const dispatch = useDispatch();
 
   function handleClickSetPage(state: number) {
-    setActivePage(state);
+    dispatch(chanageActivePage(state));
   }
 
   return (
