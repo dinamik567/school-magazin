@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface SchoolMagazineStateI {
+export interface SchoolMagazineState {
   activePage: number;
   countPage: number;
   activeMonth: string;
 }
 
-const initialState: SchoolMagazineStateI = {
+const initialState: SchoolMagazineState = {
   activePage: 1,
   countPage: 1,
   activeMonth: "Сентябрь",
@@ -17,20 +17,20 @@ export const SchoolMagazineSlice = createSlice({
   name: "SchoolMagazineState",
   initialState,
   reducers: {
-    chanageActivePage: (state, action: PayloadAction<number>) => {
+    changeActivePage: (state, action: PayloadAction<number>) => {
       state.activePage = action.payload;
     },
-    chanageCountPage: (state, action: PayloadAction<number>) => {
+    changeCountPage: (state, action: PayloadAction<number>) => {
       state.countPage = action.payload;
     },
-    chanageActiveMonth: (state, action: PayloadAction<string>) => {
+    changeActiveMonth: (state, action: PayloadAction<string>) => {
       state.activeMonth = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { chanageActivePage, chanageCountPage, chanageActiveMonth } =
+export const { changeActivePage, changeCountPage, changeActiveMonth } =
   SchoolMagazineSlice.actions;
 
 export default SchoolMagazineSlice.reducer;

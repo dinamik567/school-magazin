@@ -1,12 +1,12 @@
 import style from "./style.module.css";
 import { ROLES } from "../../defaultSettings";
-import { UserI } from "../../types/type";
+import { User } from "../../types/type";
 
-interface NameUserBlockProps {
-  user: UserI;
+interface InfoAboutStudentProps {
+  user: User;
 }
 
-export function NameUserBlock({ user }: NameUserBlockProps) {
+export function InfoAboutStudent({ user }: InfoAboutStudentProps) {
   const roleUser = ROLES[user.role];
 
   return (

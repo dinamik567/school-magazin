@@ -9,16 +9,17 @@ import {
   selectActivePage,
   selectCountPage,
 } from "../../store/school-magazine/school-magazine-selectors";
-import { SchoolDayI } from "../../types/type";
+import { SchoolDay } from "../../types/type";
 
-interface HeaderOfRowProps {
-  schoolDays: SchoolDayI[];
+interface RowHeaderProps {
+  schoolDays: SchoolDay[];
 }
 
-export function HeaderOfRow({ schoolDays }: HeaderOfRowProps) {
+export function RowHeader({ schoolDays }: RowHeaderProps) {
   const activePage = useSelector(selectActivePage);
   const countPage = useSelector(selectCountPage);
 
+  console.log(activePage);
   return (
     <div className={style.table__row}>
       <div className={`${style.table__firstCol}`}>Предметы</div>

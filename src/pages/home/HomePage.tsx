@@ -21,7 +21,7 @@ export function HomePage({ openModal }: HomePageProps) {
         <nav className={style.navList}>
           <Link
             className={`${style.listItem} ${style.listItem_calender}`}
-            to="schedule"
+            to="school_schedule"
           >
             <span className={style.navItem}>Расписание</span>
           </Link>

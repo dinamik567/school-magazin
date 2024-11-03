@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { ShedulePage } from "../components/pages/Schedule";
-import { SchoolMagazinePage } from "../components/pages/School-magazine";
+import { SchoolSchedulePage } from "../pages/school-schedule/SchoolSchedulePage";
+import { SchoolMagazinePage } from "../pages/school-magazine/SchoolMagazinePage";
 
 export const router = createBrowserRouter([
   {
@@ -9,8 +9,8 @@ export const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "schedule",
-    element: <ShedulePage />,
+    path: "school_schedule",
+    element: <SchoolSchedulePage />,
   },
   {
     path: "school_magazine",

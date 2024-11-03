@@ -1,18 +1,18 @@
 import style from "./style.module.css";
 import { useCallback, useEffect } from "react";
-import { HeaderSection } from "../../ui/Heder-section";
-import { NameUserBlock } from "../../Name-user-block";
-import { TableOfStudentOfResults } from "../../Table-of-student-of-results";
-import { UserI } from "../../../types/type";
+import { HeaderSection } from "../../components/ui/header-section/HeaderSection";
+import { InfoAboutStudent } from "../../components/info-about-student/InfoAboutStudent";
+import { StudentResultsTable } from "../../components/student-results/StudentResultsTable";
+import { User } from "../../types/type";
 import { subjects } from "../../../mock";
-import { SelectMonth } from "../../ui/Select-month";
-import { Pagination } from "../../ui/Pagination";
+import { SelectMonth } from "../../components/ui/month-select";
+import { Pagination } from "../../components/ui/pagination/Pagination";
 import { useSelector } from "react-redux";
-import { selectCountPage } from "../../../store/school-magazine/school-magazine-selectors";
-import { useAppDispatch } from "../../../store/hooks";
-import { chanageCountPage } from "../../../store/school-magazine/school-magazine-slice";
+import { selectCountPage } from "../../store/school-magazine/school-magazine-selectors";
+import { useAppDispatch } from "../../store/hooks";
+import { changeActivePage } from "../../store/school-magazine/school-magazine-slice";
 
-const user: UserI = {
+const user: User = {
   name: "Владислав",
   surname: "Ирхин",
   patronymic: "Евгеневич",
@@ -25,11 +25,11 @@ export function SchoolMagazinePage() {
 
   const handleResize = useCallback(() => {
     if (window.innerWidth < 500) {
-      dispatch(chanageCountPage(3));
+      dispatch(changeActivePage(3));
     } else if (window.innerWidth < 901) {
-      dispatch(chanageCountPage(2));
+      dispatch(changeActivePage(2));
     } else {
-      dispatch(chanageCountPage(0));
+      dispatch(changeActivePage(0));
     }
   }, [dispatch]);
 
@@ -46,14 +46,14 @@ export function SchoolMagazinePage() {
     <section className={style.magazine_section}>
       <HeaderSection>Журнал</HeaderSection>
       <div className={style.container}>
-        <NameUserBlock user={user} />
+        <InfoAboutStudent user={user} />
         <div className={style.control__inner}>
           <SelectMonth />
           {countPage !== 0 && (
             <Pagination maxWidth={150} countPage={countPage} />
           )}
         </div>
-        <TableOfStudentOfResults schoolSubject={subjects} />
+        <StudentResultsTable schoolSubject={subjects} />
       </div>
     </section>
   );

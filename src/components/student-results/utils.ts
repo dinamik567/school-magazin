@@ -1,5 +1,5 @@
 import { shortNameOfWeekDay } from "../../defaultSettings";
-import { SchoolDayI } from "../../types/type";
+import { SchoolDay } from "../../types/type";
 
 export function getShortNameOfWeekDay(date: string): string {
   const [day, month, year] = date.split(".");
@@ -14,10 +14,14 @@ export function getNumberOfDay(date: string) {
 }
 
 export function getSubArrayActivePage(
-  schoolDays: SchoolDayI[],
+  schoolDays: SchoolDay[],
   activePage: number,
   countPage: number
 ) {
+  if (activePage === 0) {
+    return schoolDays;
+  }
+
   if (countPage === 0) {
     return schoolDays;
   }

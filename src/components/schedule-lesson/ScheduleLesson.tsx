@@ -1,20 +1,19 @@
 import style from "./style.module.css";
-import { SchoolDayI } from "../../types/type";
+import { SchoolDay } from "../../types/type";
 import { colorForThisDayOfTheWeek } from "./utils";
 
-export interface DaylyScheduleProps {
-  SchoolDay: SchoolDayI;
+export interface ScheduleLessonProps {
+  SchoolDay: SchoolDay;
 }
 
-export function DaylySchedule({ SchoolDay }: DaylyScheduleProps) {
-  const modificatorClass = style[`${colorForThisDayOfTheWeek(SchoolDay.name)}`];
+export function ScheduleLesson({ SchoolDay }: ScheduleLessonProps) {
+  const modifierClass = style[`${colorForThisDayOfTheWeek(SchoolDay.name)}`];
   return (
     <div className={style.day}>
-      <div className={`${style.headerDay} ${modificatorClass}`}>
+      <div className={`${style.headerDay} ${modifierClass}`}>
         {SchoolDay.name}
         <div className={style.date}>{SchoolDay.date}</div>
       </div>
-
       <div className={style.contentDay}>
         {SchoolDay.lessons.map((lesson) => {
           return (

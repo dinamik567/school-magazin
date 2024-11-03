@@ -1,22 +1,22 @@
 import style from "./style.module.css";
-import { SchoolSubjectI } from "../../types/type";
-import { HeaderOfRow } from "./HeaderOfRow";
-import { RowOfTable } from "./RowOfTable";
-import { SchoolSchedule } from "../../mock";
+import { SchoolSubject } from "../../types/type";
+import { RowHeader } from "./RowHeader";
+import { TableRow } from "./RowOfTable";
+import { SchoolSchedule } from "../../../mock";
 
 interface TableOfStudentOfResultsProps {
-  schoolSubject: SchoolSubjectI[];
+  schoolSubject: SchoolSubject[];
 }
 
-export function TableOfStudentOfResults({
+export function StudentResultsTable({
   schoolSubject,
 }: TableOfStudentOfResultsProps) {
   return (
     <div className={style.table}>
-      <HeaderOfRow schoolDays={SchoolSchedule} />
+      <RowHeader schoolDays={SchoolSchedule} />
       {schoolSubject.map((schoolDay) => {
         return (
-          <RowOfTable
+          <TableRow
             key={schoolDay.id}
             schoolDays={SchoolSchedule}
             subjectName={schoolDay.name}
