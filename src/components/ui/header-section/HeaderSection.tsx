@@ -1,11 +1,11 @@
 import style from "./style.module.css";
 import { ArrowBack } from "../Arrow-back";
 
-interface HeaderSeactionProps {
+interface HeaderSectionProps {
   children?: React.ReactNode;
 }
 
-export function HeaderSection({ children }: HeaderSeactionProps) {
+export function HeaderSection({ children }: HeaderSectionProps) {
   return (
     <header className={style.header}>
       <div className={style.container}>

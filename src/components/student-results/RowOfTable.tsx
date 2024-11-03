@@ -1,13 +1,13 @@
 import style from "./style.module.css";
-import { SchoolDayI, SchoolResultI } from "../../types/type";
+import { SchoolDay, SchoolResult } from "../../types/type";
 
 interface RowOfTableProps {
-  schoolDays: SchoolDayI[];
-  schoolResult: SchoolResultI[];
+  schoolDays: SchoolDay[];
+  schoolResult: SchoolResult[];
   subjectName: string;
 }
 
-export function RowOfTable({
+export function TableRow({
   schoolDays,
   schoolResult,
   subjectName,

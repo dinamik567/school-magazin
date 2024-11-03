@@ -7,7 +7,7 @@ export interface LessonI {
   endOfTheLessonTime: string;
 }
 
-export interface SchoolDayI {
+export interface SchoolDay {
   id: number;
   name: string;
   date: string;
@@ -15,20 +15,20 @@ export interface SchoolDayI {
   lessons: LessonI[];
 }
 
-export interface UserI {
+export interface User {
   name: string;
   surname: string;
   patronymic: string;
   role: keyof typeof ROLES;
 }
 
-export interface SchoolResultI {
+export interface SchoolResult {
   date: string;
   result: string;
 }
 
-export interface SchoolSubjectI {
+export interface SchoolSubject {
   id: number;
   name: string;
-  schoolResults: SchoolResultI[];
+  schoolResults: SchoolResult[];
 }

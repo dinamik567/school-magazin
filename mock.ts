@@ -1,9 +1,7 @@
-import style from "./style.module.css";
-import { DaylySchedule } from "../../Dailyl-schedule";
-import { SchoolDayI } from "../../../types/type";
-import { NAME_OF_DAY } from "../../../defaultSettings";
+import { SchoolDay } from "./src/types/type";
+import { NAME_OF_DAY } from "./src/defaultSettings";
 
-const SchoolSchedule: SchoolDayI[] = [
+export const SchoolSchedule: SchoolDay[] = [
   {
     id: 1,
     name: NAME_OF_DAY.MONDAY,
@@ -340,25 +338,369 @@ const SchoolSchedule: SchoolDayI[] = [
       },
     ],
   },
+  {
+    id: 7,
+    name: NAME_OF_DAY.MONDAY,
+    date: "27.10.2024",
+    isSchoolDay: true,
+    lessons: [
+      {
+        id: 1,
+        startOfTheLesson: "08.30",
+        endOfTheLessonTime: "09.15",
+        nameSubject: "Классный час",
+      },
+      {
+        id: 2,
+        startOfTheLesson: "09.25",
+        endOfTheLessonTime: "10.10",
+        nameSubject: "География",
+      },
+      {
+        id: 3,
+        startOfTheLesson: "10.20",
+        endOfTheLessonTime: "11.05",
+        nameSubject: "Русский язык",
+      },
+      {
+        id: 4,
+        startOfTheLesson: "11.25",
+        endOfTheLessonTime: "12.10",
+        nameSubject: "Математика",
+      },
+      {
+        id: 5,
+        startOfTheLesson: "12.30",
+        endOfTheLessonTime: "13.15",
+        nameSubject: "Математика",
+      },
+      {
+        id: 6,
+        startOfTheLesson: "13.25",
+        endOfTheLessonTime: "12.10",
+        nameSubject: "Физкультура",
+      },
+      {
+        id: 7,
+        startOfTheLesson: "14.20",
+        endOfTheLessonTime: "15.05",
+        nameSubject: "Литература",
+      },
+      {
+        id: 8,
+        startOfTheLesson: "14.30",
+        endOfTheLessonTime: "15.15",
+        nameSubject: "",
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: NAME_OF_DAY.TUESDAY,
+    date: "28.10.2024",
+    isSchoolDay: true,
+    lessons: [
+      {
+        id: 1,
+        startOfTheLesson: "08.30",
+        endOfTheLessonTime: "09.15",
+        nameSubject: "Русский язык",
+      },
+      {
+        id: 2,
+        startOfTheLesson: "09.25",
+        endOfTheLessonTime: "10.10",
+        nameSubject: "Литература",
+      },
+      {
+        id: 3,
+        startOfTheLesson: "10.20",
+        endOfTheLessonTime: "11.05",
+        nameSubject: "Англ.язык",
+      },
+      {
+        id: 4,
+        startOfTheLesson: "11.25",
+        endOfTheLessonTime: "12.10",
+        nameSubject: "История",
+      },
+      {
+        id: 5,
+        startOfTheLesson: "12.30",
+        endOfTheLessonTime: "13.15",
+        nameSubject: "Математика Математика Математика",
+      },
+      {
+        id: 6,
+        startOfTheLesson: "13.25",
+        endOfTheLessonTime: "12.10",
+        nameSubject: "Музыка",
+      },
+      {
+        id: 7,
+        startOfTheLesson: "14.20",
+        endOfTheLessonTime: "15.05",
+        nameSubject: "",
+      },
+      {
+        id: 8,
+        startOfTheLesson: "14.30",
+        endOfTheLessonTime: "15.15",
+        nameSubject: "",
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: NAME_OF_DAY.WEDNESDAY,
+    date: "29.10.2024",
+    isSchoolDay: true,
+    lessons: [
+      {
+        id: 1,
+        startOfTheLesson: "08.30",
+        endOfTheLessonTime: "09.15",
+        nameSubject: "Обществознание",
+      },
+      {
+        id: 2,
+        startOfTheLesson: "09.25",
+        endOfTheLessonTime: "10.10",
+        nameSubject: "ОДНКНР",
+      },
+      {
+        id: 3,
+        startOfTheLesson: "10.20",
+        endOfTheLessonTime: "11.05",
+        nameSubject: "Русский язык",
+      },
+      {
+        id: 4,
+        startOfTheLesson: "11.25",
+        endOfTheLessonTime: "12.10",
+        nameSubject: "История",
+      },
+      {
+        id: 5,
+        startOfTheLesson: "12.30",
+        endOfTheLessonTime: "13.15",
+        nameSubject: "ИЗО",
+      },
+      {
+        id: 6,
+        startOfTheLesson: "13.25",
+        endOfTheLessonTime: "12.10",
+        nameSubject: "Математика",
+      },
+      {
+        id: 7,
+        startOfTheLesson: "14.20",
+        endOfTheLessonTime: "15.05",
+        nameSubject: "",
+      },
+      {
+        id: 8,
+        startOfTheLesson: "14.30",
+        endOfTheLessonTime: "15.15",
+        nameSubject: "",
+      },
+    ],
+  },
+  {
+    id: 10,
+    name: NAME_OF_DAY.THURSDAY,
+    date: "30.10.2024",
+    isSchoolDay: true,
+    lessons: [
+      {
+        id: 1,
+        startOfTheLesson: "08.30",
+        endOfTheLessonTime: "09.15",
+        nameSubject: "Русский язык",
+      },
+      {
+        id: 2,
+        startOfTheLesson: "09.25",
+        endOfTheLessonTime: "10.10",
+        nameSubject: "Технология",
+      },
+      {
+        id: 3,
+        startOfTheLesson: "10.20",
+        endOfTheLessonTime: "11.05",
+        nameSubject: "Технология",
+      },
+      {
+        id: 4,
+        startOfTheLesson: "11.25",
+        endOfTheLessonTime: "12.10",
+        nameSubject: "Электив",
+      },
+      {
+        id: 5,
+        startOfTheLesson: "12.30",
+        endOfTheLessonTime: "13.15",
+        nameSubject: "Математика",
+      },
+      {
+        id: 6,
+        startOfTheLesson: "13.25",
+        endOfTheLessonTime: "12.10",
+        nameSubject: "Англ.язык",
+      },
+      {
+        id: 7,
+        startOfTheLesson: "14.20",
+        endOfTheLessonTime: "15.05",
+        nameSubject: "Россия-мои горизонты",
+      },
+      {
+        id: 8,
+        startOfTheLesson: "14.30",
+        endOfTheLessonTime: "15.15",
+        nameSubject: "",
+      },
+    ],
+  },
 ];
 
-export function ShedulePage() {
-  return (
-    <div className={style.shedule}>
-      <h2 className={style.title}>Расписание уроков</h2>
-
-      <div className={style.container}>
-        <div className={style.studetWrapper}>
-          <div className={style.studentSchool}>Школа: №7</div>
-          <div className={style.studentClass}>Класс: 6A</div>
-        </div>
-
-        <div className={style.table}>
-          {SchoolSchedule.map((day, index) => (
-            <DaylySchedule SchoolDay={SchoolSchedule[index]} key={day.name} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+export const subjects = [
+  {
+    id: 1,
+    name: "Литература",
+    schoolResults: [
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "28.10.2024",
+        result: "4",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "28.10.2024",
+        result: "4",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Математика",
+    schoolResults: [
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "28.10.2024",
+        result: "4",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "28.10.2024",
+        result: "4",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "История",
+    schoolResults: [
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "28.10.2024",
+        result: "4",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+      {
+        date: "28.10.2024",
+        result: "4",
+      },
+      {
+        date: "26.10.2024",
+        result: "4",
+      },
+      {
+        date: "27.10.2024",
+        result: "3",
+      },
+    ],
+  },
+];

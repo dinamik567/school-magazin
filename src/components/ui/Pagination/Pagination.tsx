@@ -1,7 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
 import style from "./style.module.css";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store/store";
-import { chanageActivePage } from "../../../store/school-magazine/school-magazine-slice";
+import { changeActivePage } from "../../../store/school-magazine/school-magazine-slice";
 
 interface PaginationProps {
   maxWidth: number;
@@ -16,7 +16,7 @@ export function Pagination({ maxWidth, countPage }: PaginationProps) {
   const dispatch = useDispatch();
 
   function handleClickSetPage(state: number) {
-    dispatch(chanageActivePage(state));
+    dispatch(changeActivePage(state));
   }
 
   return (

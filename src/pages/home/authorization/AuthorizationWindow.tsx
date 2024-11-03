@@ -1,14 +1,14 @@
 import style from "./style.module.css";
 
-interface AuthorizationModalWindowProps {
+interface AuthorizationWindowProps {
   isOpend: boolean;
   closeWindow: () => void;
 }
 
-export function AuthorizationModalWindow({
+export function AuthorizationWindow({
   isOpend,
   closeWindow,
-}: AuthorizationModalWindowProps) {
+}: AuthorizationWindowProps) {
   const displayState = isOpend ? "block" : "none";
 
   function handleClickOnWrap() {

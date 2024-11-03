@@ -1,7 +1,6 @@
 import style from "./style.module.css";
-import ArrowBackIcon from "../../../assets/icons/arrow-back.svg";
 import { Link } from "react-router-dom";
-
+import ArrowBackIcon from "../../../../public/assets/icons/arrow-back.svg";
 interface ArrowBackProps {
   pathTo: string;
 }

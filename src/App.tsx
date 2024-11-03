@@ -1,9 +1,9 @@
-import { useState } from "react";
 import "./App.css";
-import { HomePage } from "./components/pages/Home";
-import { AuthorizationModalWindow } from "./components/ui/Authorization-modal-window";
+import { useState } from "react";
+import { HomePage } from "./pages/home/HomePage";
+import { AuthorizationWindow } from "./pages/home/authorization/AuthorizationWindow";
 
-function App() {
+export function App() {
   const [isActiveModal, setIsActiveModal] = useState(false);
   function closeModalWindow() {
     setIsActiveModal(false);
@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <HomePage openModal={openModalWindow} />
-      <AuthorizationModalWindow
+      <AuthorizationWindow
         isOpend={isActiveModal}
         closeWindow={closeModalWindow}
       />
