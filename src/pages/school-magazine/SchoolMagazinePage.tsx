@@ -4,7 +4,7 @@ import { HeaderSection } from "../../components/ui/header-section/HeaderSection"
 import { InfoAboutStudent } from "../../components/info-about-student/InfoAboutStudent";
 import { StudentResultsTable } from "../../components/student-results/StudentResultsTable";
 import { User } from "../../types/type";
-import { subjects } from "../../../mock";
+import { schoolClass } from "../../../mock";
 import { SelectMonth } from "../../components/ui/month-select";
 import { Pagination } from "../../components/ui/pagination/Pagination";
 import { useSelector } from "react-redux";
@@ -53,7 +53,7 @@ export function SchoolMagazinePage() {
             <Pagination maxWidth={150} countPage={countPage} />
           )}
         </div>
-        <StudentResultsTable schoolSubject={subjects} />
+        <StudentResultsTable schoolClass={schoolClass[0]} />
       </div>
     </section>
   );

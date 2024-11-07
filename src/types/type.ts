@@ -32,3 +32,29 @@ export interface SchoolSubject {
   name: string;
   schoolResults: SchoolResult[];
 }
+
+export interface SchoolClass {
+  name: string;
+  students: Student[];
+}
+
+interface Student {
+  id: number;
+  firstName: string;
+  lastName: string;
+  patronymic: string;
+  SchoolSubjects: SchoolSubjects[];
+}
+
+interface SchoolSubjects {
+  id: number;
+  name: string;
+  assessments: Assessment[];
+}
+
+export interface Assessment {
+  id: number;
+  data: string;
+  result: number;
+  note?: string;
+}

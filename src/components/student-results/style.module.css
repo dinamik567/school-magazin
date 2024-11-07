@@ -14,8 +14,12 @@
   border: 1px solid brown;
 }
 
-.table__inner_border {
+.table__inner_borderTopNone {
   border-top: none;
+}
+
+.table__inner_borderBottomNone {
+  border-bottom: none;
 }
 
 .table__firstCol {
@@ -48,7 +52,7 @@
   align-items: center;
 }
 
-.ceil__numberDay {
+.ceil {
   min-width: 2rem;
   min-height: 2rem;
   display: flex;
@@ -56,7 +60,7 @@
   align-items: center;
 }
 
-.ceil__numberDay_border {
+.ceil_border {
   border-top: 1px solid brown;
 }
 

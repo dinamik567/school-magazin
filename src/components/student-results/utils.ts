@@ -1,11 +1,22 @@
-import { shortNameOfWeekDay } from "../../defaultSettings";
+import { shortNameOfWeekDay, monthNames } from "../../defaultSettings";
 import { SchoolDay } from "../../types/type";
 
-export function getShortNameOfWeekDay(date: string): string {
-  const [day, month, year] = date.split(".");
-  const objDate = new Date(+year, +month - 1, +day);
-  const numDayOfWeek = objDate.getDay();
+export function getShortNameOfWeekDay(
+  year: number,
+  month: number,
+  day: number
+): string {
+  const date = new Date(year, month, day);
+  const numDayOfWeek = date.getDay();
   return shortNameOfWeekDay[numDayOfWeek];
+}
+
+export function daysInMonth(month: number, year: number) {
+  return new Date(year, month, 0).getDate();
+}
+
+export function getNameOfMoth(numberMonth: number) {
+  return monthNames[numberMonth - 1];
 }
 
 export function getNumberOfDay(date: string) {
