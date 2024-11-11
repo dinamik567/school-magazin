@@ -4,13 +4,11 @@ import { HeaderSection } from "../../components/ui/header-section/HeaderSection"
 import { InfoAboutStudent } from "../../components/info-about-student/InfoAboutStudent";
 import { StudentResultsTable } from "../../components/student-results/StudentResultsTable";
 import { User } from "../../types/type";
-import { schoolClass } from "../../../mock";
+import { schoolClasses } from "../../../mock";
 import { SelectMonth } from "../../components/ui/month-select";
-import { Pagination } from "../../components/ui/pagination/Pagination";
-import { useSelector } from "react-redux";
-import { selectCountPage } from "../../store/school-magazine/school-magazine-selectors";
 import { useAppDispatch } from "../../store/hooks";
 import { changeActivePage } from "../../store/school-magazine/school-magazine-slice";
+import { SchoolClassModal } from "../../core/magazine/modal";
 
 const user: User = {
   name: "Владислав",
@@ -20,8 +18,9 @@ const user: User = {
 };
 
 export function SchoolMagazinePage() {
-  const countPage = useSelector(selectCountPage);
   const dispatch = useAppDispatch();
+  console.log(schoolClasses[0]);
+  const schoolClass = new SchoolClassModal(schoolClasses[0]);
 
   const handleResize = useCallback(() => {
     if (window.innerWidth < 500) {
@@ -49,11 +48,8 @@ export function SchoolMagazinePage() {
         <InfoAboutStudent user={user} />
         <div className={style.control__inner}>
           <SelectMonth />
-          {countPage !== 0 && (
-            <Pagination maxWidth={150} countPage={countPage} />
-          )}
         </div>
-        <StudentResultsTable schoolClass={schoolClass[0]} />
+        <StudentResultsTable schoolClass={schoolClass} />
       </div>
     </section>
   );

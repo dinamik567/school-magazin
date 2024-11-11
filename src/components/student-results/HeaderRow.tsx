@@ -1,30 +1,32 @@
 import style from "./style.module.css";
-import { RowCeil } from "./RowCeil";
 import { getShortNameOfWeekDay } from "./utils";
 
 interface RowHeaderProps {
-  daysArray: number[];
+  daysAmount: number[];
   currentYear: number;
 }
 
-export function HeaderRow({ daysArray, currentYear }: RowHeaderProps) {
+export function HeaderRow({ daysAmount, currentYear }: RowHeaderProps) {
   return (
-    <div className={style.table__row}>
-      <div
-        className={`${style.table__firstCol} ${style.table__inner_borderBottomNone}`}
-      >
-        Предметы
-      </div>
-      <div className={style.table__inner}>
-        {daysArray.map((day, index) => (
-          <div key={index} className={style.table__ceil}>
-            <div className={style.row__nameDay}>
-              {getShortNameOfWeekDay(currentYear, 5, index)}
-            </div>
-            <RowCeil value={day} />
-          </div>
+    <>
+      <tr>
+        <th rowSpan={2} className={style.ceil}>
+          Предметы
+        </th>
+        {daysAmount.map((_, index) => (
+          <th key={index} className={style.ceil}>
+            {" "}
+            {getShortNameOfWeekDay(currentYear, 5, index)}
+          </th>
         ))}
-      </div>
-    </div>
+      </tr>
+      <tr>
+        {daysAmount.map((day, index) => (
+          <td key={index} className={style.ceil}>
+            {day}
+          </td>
+        ))}
+      </tr>
+    </>
   );
 }

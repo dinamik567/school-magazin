@@ -1,8 +1,8 @@
 import style from "./style.module.css";
 interface RowCeilProps {
-  value?: number;
+  value?: number | null;
 }
 
 export function RowCeil({ value }: RowCeilProps) {
-  return <div className={`${style.ceil} ${style.ceil_border}`}>{value}</div>;
+  return <td className={`${style.ceil} ${style.ceil_assessments}`}>{value}</td>;
 }

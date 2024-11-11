@@ -564,8 +564,9 @@ export const SchoolSchedule: SchoolDay[] = [
   },
 ];
 
-export const schoolClass: SchoolClass[] = [
+export const schoolClasses: SchoolClass[] = [
   {
+    id: 1,
     name: "5В",
     students: [
       {
@@ -573,7 +574,7 @@ export const schoolClass: SchoolClass[] = [
         firstName: "Владислав",
         lastName: "Ирхин",
         patronymic: "Евгеньевич",
-        SchoolSubjects: [
+        schoolSubjects: [
           {
             id: 1,
             name: "Математика",

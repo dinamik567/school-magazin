@@ -1,6 +1,6 @@
 import { ROLES } from "../defaultSettings";
 
-export interface LessonI {
+export interface Lesson {
   id: number;
   nameSubject: string;
   startOfTheLesson: string;
@@ -12,7 +12,7 @@ export interface SchoolDay {
   name: string;
   date: string;
   isSchoolDay: boolean;
-  lessons: LessonI[];
+  lessons: Lesson[];
 }
 
 export interface User {
@@ -22,31 +22,21 @@ export interface User {
   role: keyof typeof ROLES;
 }
 
-export interface SchoolResult {
-  date: string;
-  result: string;
-}
-
-export interface SchoolSubject {
-  id: number;
-  name: string;
-  schoolResults: SchoolResult[];
-}
-
 export interface SchoolClass {
+  id: number;
   name: string;
   students: Student[];
 }
 
-interface Student {
+export interface Student {
   id: number;
   firstName: string;
   lastName: string;
   patronymic: string;
-  SchoolSubjects: SchoolSubjects[];
+  schoolSubjects: SchoolSubject[];
 }
 
-interface SchoolSubjects {
+export interface SchoolSubject {
   id: number;
   name: string;
   assessments: Assessment[];
@@ -55,6 +45,6 @@ interface SchoolSubjects {
 export interface Assessment {
   id: number;
   data: string;
-  result: number;
-  note?: string;
+  result: number | null;
+  note: string | null;
 }
