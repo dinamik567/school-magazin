@@ -12,6 +12,11 @@
   text-align: center;
 }
 
+.ceil_student {
+  text-align: left;
+  padding-left: 0.75em;
+}
+
 .ceil_assessments {
   cursor: pointer;
 }

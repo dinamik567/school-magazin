@@ -1,10 +1,11 @@
 import style from "./style.module.css";
-import { Assessment } from "../../types/type";
 import { RowCeil } from "./RowCeil";
+import { DataInMonthModel } from "./helpModels";
+import { SchoolSubjectModel } from "../../core/magazine/models";
 
 interface RowOfTableProps {
-  daysAmount: number[];
-  schoolResult: Assessment[];
+  daysAmount: DataInMonthModel[];
+  schoolResult: SchoolSubjectModel | undefined;
   studentName: string;
 }
 
@@ -15,11 +16,12 @@ export function TableRow({
 }: RowOfTableProps) {
   return (
     <tr>
-      <td rowSpan={2} className={style.ceil}>
-        {studentName}
-      </td>
-      {daysAmount.map((_, index) => (
-        <RowCeil key={index} value={schoolResult[0].result} />
+      <th className={`${style.ceil} ${style.ceil_student}`}>{studentName}</th>
+      {daysAmount.map((day, index) => (
+        <RowCeil
+          key={index}
+          value={schoolResult?.getResultOnSelectData(day.data)?.result}
+        />
       ))}
     </tr>
   );

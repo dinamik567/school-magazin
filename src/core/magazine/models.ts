@@ -5,18 +5,18 @@ import {
   Assessment,
 } from "../../types/type";
 
-export class SchoolClassModal {
+export class SchoolClassModel {
   id;
   name;
   students;
   constructor({ id, name, students }: SchoolClass) {
     this.id = id;
     this.name = name;
-    this.students = students.map((student) => new StudentModal(student));
+    this.students = students.map((student) => new StudentModel(student));
   }
 }
 
-export class StudentModal {
+export class StudentModel {
   id;
   firstName;
   lastName;
@@ -34,12 +34,22 @@ export class StudentModal {
     this.lastName = lastName;
     this.patronymic = patronymic;
     this.schoolSubjects = schoolSubjects.map(
-      (schoolSubject) => new SchoolSubjectModal(schoolSubject)
+      (schoolSubject) => new SchoolSubjectModel(schoolSubject)
+    );
+  }
+
+  get shortName() {
+    return `${this.lastName} ${this.firstName[0]}. ${this.patronymic[0]}.`;
+  }
+
+  getSchoolSubjectByName(schoolSubjectName: string) {
+    return this.schoolSubjects.find(
+      (subject) => subject.name === schoolSubjectName
     );
   }
 }
 
-class SchoolSubjectModal {
+export class SchoolSubjectModel {
   id;
   name;
   assessments;
@@ -50,6 +60,13 @@ class SchoolSubjectModal {
       (assessment) => new AssessmentModal(assessment)
     );
   }
+
+  getResultOnSelectData(data: string) {
+    const result = this.assessments.find(
+      (assessment) => assessment.data === data
+    );
+    return result || null;
+  }
 }
 
 class AssessmentModal {
@@ -57,14 +74,11 @@ class AssessmentModal {
   data;
   result;
   note;
+
   constructor({ id, data, result, note }: Assessment) {
     this.id = id;
     this.data = data;
     this.result = result;
     this.note = note;
-  }
-
-  get Results() {
-    return this.result;
   }
 }

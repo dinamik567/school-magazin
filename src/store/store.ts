@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import shoolMagazineReducer from "./school-magazine/school-magazine-slice";
+import schoolMagazineReducer from "./school-magazine/school-magazine-slice";
 
 export const store = configureStore({
   reducer: {
-    shoolMagazineState: shoolMagazineReducer,
+    schoolMagazineState: schoolMagazineReducer,
   },
 });
 

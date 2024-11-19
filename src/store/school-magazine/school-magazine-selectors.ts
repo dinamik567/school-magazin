@@ -1,6 +1,6 @@
 import { RootState } from "../store";
 
-export const selectActivePage = (state: RootState) =>
-  state.shoolMagazineState.activePage;
-export const selectCountPage = (state: RootState) =>
-  state.shoolMagazineState.countPage;
+export const selectMagazinePage = (state: RootState) =>
+  state.schoolMagazineState;
+export const selectActiveMonth = (state: RootState) =>
+  state.schoolMagazineState.activeMonth;

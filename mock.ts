@@ -581,7 +581,123 @@ export const schoolClasses: SchoolClass[] = [
             assessments: [
               {
                 id: 1,
-                data: "01.11.2024",
+                data: "01.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+              {
+                id: 2,
+                data: "04.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 1,
+        firstName: "Болеслав",
+        lastName: "Ефремов",
+        patronymic: "Алексеевич",
+        schoolSubjects: [
+          {
+            id: 1,
+            name: "Математика",
+            assessments: [
+              {
+                id: 1,
+                data: "01.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+              {
+                id: 2,
+                data: "04.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+              {
+                id: 2,
+                data: "07.10.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 1,
+        firstName: "Игнат",
+        lastName: "Давыдов",
+        patronymic: "Парфеньевич",
+        schoolSubjects: [
+          {
+            id: 1,
+            name: "Математика",
+            assessments: [
+              {
+                id: 1,
+                data: "01.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+              {
+                id: 2,
+                data: "04.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 1,
+        firstName: "Екатерина",
+        lastName: "Муравьёва",
+        patronymic: "Витальевна",
+        schoolSubjects: [
+          {
+            id: 1,
+            name: "Математика",
+            assessments: [
+              {
+                id: 1,
+                data: "01.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+              {
+                id: 2,
+                data: "04.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 1,
+        firstName: "Валерия",
+        lastName: "Иванова",
+        patronymic: "Борисовна",
+        schoolSubjects: [
+          {
+            id: 1,
+            name: "Математика",
+            assessments: [
+              {
+                id: 1,
+                data: "01.09.2024",
+                result: 5,
+                note: "Ответ у доски",
+              },
+              {
+                id: 2,
+                data: "04.09.2024",
                 result: 5,
                 note: "Ответ у доски",
               },

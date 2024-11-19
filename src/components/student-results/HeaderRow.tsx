@@ -1,29 +1,27 @@
 import style from "./style.module.css";
-import { getShortNameOfWeekDay } from "./utils";
+import { DataInMonthModel } from "./helpModels";
 
 interface RowHeaderProps {
-  daysAmount: number[];
-  currentYear: number;
+  daysAmount: DataInMonthModel[];
 }
 
-export function HeaderRow({ daysAmount, currentYear }: RowHeaderProps) {
+export function HeaderRow({ daysAmount }: RowHeaderProps) {
   return (
     <>
       <tr>
         <th rowSpan={2} className={style.ceil}>
           Предметы
         </th>
-        {daysAmount.map((_, index) => (
+        {daysAmount.map((data, index) => (
           <th key={index} className={style.ceil}>
-            {" "}
-            {getShortNameOfWeekDay(currentYear, 5, index)}
+            {data.shortNameOfWeekDay}
           </th>
         ))}
       </tr>
       <tr>
-        {daysAmount.map((day, index) => (
+        {daysAmount.map((data, index) => (
           <td key={index} className={style.ceil}>
-            {day}
+            {data.numberDay}
           </td>
         ))}
       </tr>

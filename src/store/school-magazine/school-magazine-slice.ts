@@ -1,28 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { schoolClasses } from "../../../mock";
+import { SchoolClassModel } from "../../core/magazine/models";
 
 export interface SchoolMagazineState {
-  activePage: number;
-  countPage: number;
   activeMonth: string;
+  schoolClasses: SchoolClassModel;
+  activeYear: number;
 }
 
 const initialState: SchoolMagazineState = {
-  activePage: 1,
-  countPage: 1,
   activeMonth: "Сентябрь",
+  activeYear: new Date().getFullYear(),
+  schoolClasses: new SchoolClassModel(schoolClasses[0]),
 };
 
 export const SchoolMagazineSlice = createSlice({
   name: "SchoolMagazineState",
   initialState,
   reducers: {
-    changeActivePage: (state, action: PayloadAction<number>) => {
-      state.activePage = action.payload;
-    },
-    changeCountPage: (state, action: PayloadAction<number>) => {
-      state.countPage = action.payload;
-    },
     changeActiveMonth: (state, action: PayloadAction<string>) => {
       state.activeMonth = action.payload;
     },
@@ -30,7 +26,6 @@ export const SchoolMagazineSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { changeActivePage, changeCountPage, changeActiveMonth } =
-  SchoolMagazineSlice.actions;
+export const { changeActiveMonth } = SchoolMagazineSlice.actions;
 
 export default SchoolMagazineSlice.reducer;

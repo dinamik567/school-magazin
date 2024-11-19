@@ -1,31 +1,28 @@
 import style from "./style.module.css";
-import { SchoolClass } from "../../types/type";
 import { HeaderRow } from "./HeaderRow";
 import { TableRow } from "./TableRow";
-import { getDaysArrayInMonth } from "./utils";
+import { MonthDataModel } from "./helpModels";
+import { useAppSelector } from "../../store/hooks";
+import { selectMagazinePage } from "../../store/school-magazine/school-magazine-selectors";
 
-interface TableOfStudentOfResultsProps {
-  schoolClass: SchoolClass;
-}
+export function StudentResultsTable() {
+  const { schoolClasses, activeMonth, activeYear } =
+    useAppSelector(selectMagazinePage);
 
-const currentYear = new Date().getFullYear();
-
-export function StudentResultsTable({
-  schoolClass,
-}: TableOfStudentOfResultsProps) {
-  const daysArray = getDaysArrayInMonth(5, currentYear);
-
+  const daysAmount = new MonthDataModel(activeMonth, activeYear);
   return (
     <table className={style.table}>
-      <HeaderRow daysAmount={daysArray} currentYear={currentYear} />
-      {schoolClass.students.map((student) => (
-        <TableRow
-          key={student.id}
-          daysAmount={daysArray}
-          studentName={`${student.lastName} ${student.firstName[0]}. ${student.patronymic[0]}.`}
-          schoolResult={student.schoolSubjects[0].assessments}
-        />
-      ))}
+      <tbody>
+        <HeaderRow daysAmount={daysAmount.monthData} />
+        {schoolClasses.students.map((student) => (
+          <TableRow
+            key={student.id}
+            daysAmount={daysAmount.monthData}
+            studentName={student.shortName}
+            schoolResult={student.getSchoolSubjectByName("Математика")}
+          />
+        ))}
+      </tbody>
     </table>
   );
 }

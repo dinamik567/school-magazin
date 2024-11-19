@@ -6,14 +6,15 @@ interface HomePageProps {
 }
 
 export function HomePage({ openModal }: HomePageProps) {
-  function hadleClickEnterButton() {
+  function handleClickEnterButton() {
     openModal();
   }
+
   return (
     <div className={style.home}>
       <div className={style.header}>
         <div className={style.logo}>Электронный дневник</div>
-        <div className={style.login} onClick={hadleClickEnterButton}>
+        <div className={style.login} onClick={handleClickEnterButton}>
           Войти
         </div>
       </div>
