@@ -12,8 +12,8 @@ export interface SchoolDay {
   name: string;
   date: string;
   isSchoolDay: boolean;
+
   lessons: Lesson[];
-}
 
 export interface User {
   name: string;
@@ -21,6 +21,7 @@ export interface User {
   patronymic: string;
   role: keyof typeof ROLES;
 }
+
 
 export interface SchoolClass {
   id: number;

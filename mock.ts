@@ -564,6 +564,7 @@ export const SchoolSchedule: SchoolDay[] = [
   },
 ];
 
+
 export const schoolClasses: SchoolClass[] = [
   {
     id: 1,
@@ -1047,3 +1048,4 @@ export const schoolClasses: SchoolClass[] = [
 //     ],
 //   },
 // ];
+

@@ -13,13 +13,14 @@ const user: User = {
 };
 
 export function SchoolMagazinePage() {
+
   return (
     <section className={style.magazine_section}>
       <HeaderSection>Журнал</HeaderSection>
       <div className={style.container}>
         <InfoAboutStudent user={user} />
         <div className={style.control__inner}>
-          <SelectMonth />
+          <SelectMonth /> dev
         </div>
         <StudentResultsTable />
       </div>
